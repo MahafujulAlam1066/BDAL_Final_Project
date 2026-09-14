@@ -2,243 +2,74 @@
 
 ## 📌 Project Overview
 
-This project is a **Big Data Analytics implementation** based on a large-scale dataset containing information about college majors, institutions, career outcomes, earnings, student debt, employment, occupations, and AI-related workforce indicators.
+This project is a **Big Data Analytics implementation** using a large-scale College Major & Career Outcomes dataset. The project demonstrates how distributed Big Data technologies can be used to store, process, analyze, and extract meaningful insights from educational and career-related data.
 
-The main objective of this project is to demonstrate how Big Data technologies can be used to store, process, analyze, and extract meaningful insights from a large real-world dataset.
+The project implements:
 
-The project implements three major Big Data technologies:
-
-- **Hadoop HDFS** — Distributed storage and dataset management
-- **Hadoop MapReduce** — Distributed data processing and analytical operations
+- **Hadoop HDFS** — Distributed data storage
+- **Hadoop MapReduce** — Distributed data processing
 - **Apache Pig** — High-level data analysis and transformation
+
+The analysis focuses mainly on **college major earnings, employment, student debt, occupations, and career outcomes**.
 
 ---
 
 ## 📊 Dataset
 
-### Dataset Overview
+### Dataset Information
 
-The project uses the **College Major & Career Outcomes 2026** dataset, a large-scale CSV dataset containing information about college programs, institutions, earnings, employment, student debt, occupations, and AI-related workforce indicators.
+The project uses the **College Major & Career Outcomes 2026** dataset.
 
-The dataset is suitable for Big Data processing because of its large size, diverse attributes, and combination of categorical, numerical, and textual data.
-
-### Dataset Statistics
-
-| Property | Value |
-|:---|---:|
-| Dataset Name | College Major & Career Outcomes 2026 |
+| Property | Details |
+|---|---|
 | File Name | `college_major_career_outcomes_2026.csv` |
-| File Format | CSV |
-| Number of Records | **227,981** |
-| Number of Attributes | **72** |
-| Raw File Size | **126,340,696 bytes** |
-| Approximate Size | **126.34 MB** |
-| Distinct Major Titles Processed | **358** |
-| Major Categories Processed | **44** |
-| Storage Platform | Hadoop HDFS |
-| Processing Platforms | Hadoop MapReduce & Apache Pig |
+| Format | CSV |
+| Records | **227,981** |
+| Attributes | **72** |
+| File Size | **126,340,696 bytes (~126.34 MB)** |
+| Distinct Major Titles | **358** |
+| Major Categories | **44** |
+| Storage | Hadoop HDFS |
 
-> **Note:** The record count represents the input records processed by the Hadoop MapReduce jobs. The distinct major-title and major-category counts correspond to the successfully processed analytical outputs.
+### Main Data Areas
 
-### Dataset Dimensions
+The dataset contains information related to:
 
-The dataset contains:
+- Institutions and campus details
+- College majors and CIP classifications
+- Credential and degree information
+- Tuition and admission
+- 1-year, 4-year, and 5-year earnings
+- Employment outcomes
+- Student debt and loan payments
+- Occupation and labor-market information
+- BLS and O*NET occupation data
+- AI and technology-related indicators
 
-- **227,981 records**
-- **72 attributes**
-- Approximately **126.34 MB** of raw CSV data
+### Important Analytical Fields
 
-This size makes the dataset appropriate for demonstrating distributed storage and processing using Hadoop technologies.
+| Field | Description |
+|---|---|
+| `cip_title` | College major title |
+| `cip_family_title` | Major category |
+| `median_earnings_4yr_usd` | Median 4-year earnings |
+| `median_earnings_1yr_usd` | Median 1-year earnings |
+| `median_earnings_5yr_usd` | Median 5-year earnings |
+| `count_working_in_state_5yr` | Number working in-state after 5 years |
+| `median_debt_usd` | Median student debt |
+| `median_monthly_payment_usd` | Median monthly payment |
+| `earnings_growth_pct_1yr_to_5yr` | Earnings growth |
+| `occupation_median_wage_2024_usd` | Occupation median wage |
+| `occupation_growth_pct_2024_34` | Occupation growth |
+| `ai_software_occupation_share` | AI software usage indicator |
 
-The dataset was uploaded to HDFS at:
-
-```text
-/BDAFinal1066/college/college_major_career_outcomes_2026.csv
-
-
-Yes. The main formatting problem is that the **HDFS code block was never closed**, so GitHub treats everything after it incorrectly. Also, the architecture block has **four backticks** instead of three.
-
-Below is the **properly aligned and corrected complete README**. Replace your current `README.md` with this version.
-
-````markdown
-# BDAL Final Project
-
-## 📌 Project Overview
-
-This project is a **Big Data Analytics implementation** based on a large-scale dataset containing information about college majors, institutions, career outcomes, earnings, student debt, employment, occupations, and AI-related workforce indicators.
-
-The main objective of this project is to demonstrate how Big Data technologies can be used to store, process, analyze, and extract meaningful insights from a large real-world dataset.
-
-The project implements three major Big Data technologies:
-
-- **Hadoop HDFS** — Distributed storage and dataset management
-- **Hadoop MapReduce** — Distributed data processing and analytical operations
-- **Apache Pig** — High-level data analysis and transformation
-
----
-
-## 📊 Dataset
-
-### Dataset Overview
-
-The project uses the **College Major & Career Outcomes 2026** dataset, a large-scale CSV dataset containing information about college programs, institutions, earnings, employment, student debt, occupations, and AI-related workforce indicators.
-
-The dataset is suitable for Big Data processing because of its large size, diverse attributes, and combination of categorical, numerical, and textual data.
-
-### Dataset Statistics
-
-| Property | Value |
-|:---|---:|
-| Dataset Name | College Major & Career Outcomes 2026 |
-| File Name | `college_major_career_outcomes_2026.csv` |
-| File Format | CSV |
-| Number of Records | **227,981** |
-| Number of Attributes | **72** |
-| Raw File Size | **126,340,696 bytes** |
-| Approximate Size | **126.34 MB** |
-| Distinct Major Titles Processed | **358** |
-| Major Categories Processed | **44** |
-| Storage Platform | Hadoop HDFS |
-| Processing Platforms | Hadoop MapReduce & Apache Pig |
-
-> **Note:** The record count represents the input records processed by the Hadoop MapReduce jobs. The distinct major-title and major-category counts correspond to the successfully processed analytical outputs.
-
-### Dataset Dimensions
-
-The dataset contains:
-
-- **227,981 records**
-- **72 attributes**
-- Approximately **126.34 MB** of raw CSV data
-
-This size makes the dataset appropriate for demonstrating distributed storage and processing using Hadoop technologies.
-
-The dataset was uploaded to HDFS at:
-
-```text
-/BDAFinal1066/college/college_major_career_outcomes_2026.csv
-````
-
-### Main Data Categories
-
-#### 1. Institution Information
-
-These attributes describe the educational institution associated with each program.
-
-Examples:
-
-* Institution name
-* Institution control
-* Main campus status
-* Institution city
-* Institution state
-* Institution region
-* Institution latitude
-* Institution longitude
-* HBCU status
-* Admission rate
-* Average SAT
-* Undergraduate enrollment
-* In-state tuition
-* Out-of-state tuition
-
-#### 2. College Major Information
-
-These attributes describe the academic program and its classification.
-
-Examples:
-
-* Program ID
-* CIP code
-* CIP title
-* CIP family code
-* CIP family title
-* Credential level
-* Credential name
-* Distance education
-* Awards information
-
-The dataset contains **358 distinct major titles** represented in the MapReduce earnings analysis and **44 major categories** used for category-level analysis.
-
-#### 3. Earnings Information
-
-The dataset contains earnings information at multiple time periods.
-
-Important attributes include:
-
-* Median 1-year earnings
-* Median 4-year earnings
-* Median 5-year earnings
-* Earnings cohort sizes
-* National median earnings
-* National 25th percentile earnings
-* National 75th percentile earnings
-* Earnings compared with the national median
-* Earnings growth
-* Earnings trajectory category
-
-#### 4. Employment Information
-
-Employment-related attributes provide information about workforce participation and employment outcomes.
-
-Examples include:
-
-* Number not working after 5 years
-* Number above the high-school earnings threshold
-* Number working in-state after 5 years
-* Percentage working after 5 years
-* Percentage working in-state after 5 years
-
-#### 5. Student Debt Information
-
-The dataset also contains several student debt indicators.
-
-Important fields include:
-
-* Median student debt
-* Number of borrowers
-* Median monthly payment
-* Debt-to-earnings ratio after 1 year
-* Debt-to-earnings ratio after 4 years
-* Payment-to-income percentage
-* Debt status
-
-#### 6. Occupation Information
-
-The dataset links college programs with potential occupations.
-
-Relevant attributes include:
-
-* Number of linked occupations
-* BLS-linked occupations
-* Largest linked occupation
-* Occupation SOC code
-* Typical entry-level education
-* Occupation employment
-* Occupation growth percentage
-* Maximum occupation growth
-* Annual job openings
-* Occupation median wage
-* O*NET-linked occupations
-
-#### 7. Artificial Intelligence and Technology Information
-
-The dataset also contains fields related to AI and technology usage in occupations.
-
-Examples include:
-
-* Occupations using AI software
-* AI software occupation share
-* Expert system occupation share
-* Maximum AI tools per occupation
-* Mean hot technologies per occupation
-* AI tool examples
+The dataset contains a mixture of **categorical, numerical, textual, percentage, geographic, and status-based attributes**, making it suitable for distributed Big Data analysis.
 
 ---
 
 ## 🏗️ Project Architecture
 
-```text
+
 College Major & Career Outcomes Dataset
                     │
                     ▼
@@ -260,14 +91,14 @@ College Major & Career Outcomes Dataset
              Analytical Results
                     │
                     ▼
-              Data Insights
-```
+               Data Insights
+````
 
 ---
 
-## 🗄️ HDFS Implementation
+# 🗄️ HDFS Implementation
 
-The dataset was uploaded and managed using **Hadoop Distributed File System (HDFS)**.
+The dataset was stored and managed using **Hadoop Distributed File System (HDFS)**.
 
 ### HDFS Dataset Location
 
@@ -275,16 +106,16 @@ The dataset was uploaded and managed using **Hadoop Distributed File System (HDF
 /BDAFinal1066/college/college_major_career_outcomes_2026.csv
 ```
 
-### HDFS Operations Performed
+### Operations Performed
 
-* Created the project directory in HDFS
-* Uploaded the dataset to HDFS
-* Verified the uploaded dataset
+* Created the HDFS project directory
+* Uploaded the dataset
+* Verified the uploaded file
 * Checked HDFS storage information
 * Analyzed HDFS block allocation
-* Verified dataset size and distributed storage
+* Verified dataset size
 
-### Main HDFS Commands
+### Main Commands
 
 ```bash
 hdfs dfs -mkdir -p /BDAFinal1066/college
@@ -300,7 +131,7 @@ hdfs dfs -du -h /BDAFinal1066/college
 
 # ⚙️ MapReduce Implementation
 
-Three MapReduce programs were developed using **Java**.
+Three Java-based MapReduce programs were implemented to perform distributed analytical operations.
 
 ## 1. Average 4-Year Earnings by Major
 
@@ -314,13 +145,12 @@ Calculate the average 4-year median earnings for each college major.
 Major → Average 4-Year Earnings
 ```
 
-### Source Code
+### Files
 
-`MapReduce/MR1/CollegeMajorAverageEarnings.java`
-
-### JAR
-
-`MapReduce/MR1/college-major-earnings.jar`
+```text
+MapReduce/MR1/CollegeMajorAverageEarnings.java
+MapReduce/MR1/college-major-earnings.jar
+```
 
 ---
 
@@ -328,7 +158,7 @@ Major → Average 4-Year Earnings
 
 ### Objective
 
-Calculate the total employment for each major category using the number of people working in-state after five years.
+Calculate total employment for each major category using the number of people working in-state after five years.
 
 ### Output
 
@@ -336,13 +166,12 @@ Calculate the total employment for each major category using the number of peopl
 Major Category → Total Employment
 ```
 
-### Source Code
+### Files
 
-`MapReduce/MR2/CollegeCategoryEmployment.java`
-
-### JAR
-
-`MapReduce/MR2/college-category-employment.jar`
+```text
+MapReduce/MR2/CollegeCategoryEmployment.java
+MapReduce/MR2/college-category-employment.jar
+```
 
 ---
 
@@ -358,21 +187,20 @@ Calculate the average median student debt for each major category.
 Major Category → Average Student Debt
 ```
 
-### Source Code
+### Files
 
-`MapReduce/MR3/CollegeCategoryAverageDebt.java`
-
-### JAR
-
-`MapReduce/MR3/college-category-average-debt.jar`
+```text
+MapReduce/MR3/CollegeCategoryAverageDebt.java
+MapReduce/MR3/college-category-average-debt.jar
+```
 
 ---
 
 # 🐷 Apache Pig Implementation
 
-Apache Pig was used to perform high-level data transformation and analysis.
+Apache Pig was used for high-level data transformation, filtering, grouping, aggregation, sorting, and ranking.
 
-Because the dataset contains CSV fields with quoted commas, the project uses the **CSVExcelStorage** loader from the Piggybank library for proper CSV parsing.
+Because the dataset contains CSV fields with quoted commas, the project uses **`CSVExcelStorage()`** from the Piggybank library for proper CSV parsing.
 
 ---
 
@@ -382,7 +210,9 @@ The first Pig operation performs analytical processing on the college major data
 
 ### Location
 
-`Pig/PIG1/`
+```text
+Pig/PIG1/
+```
 
 ---
 
@@ -400,7 +230,9 @@ Major Category → Average 4-Year Earnings
 
 ### Script
 
-`Pig/PIG2/pig2_average_earnings_by_category.pig`
+```text
+Pig/PIG2/pig2_average_earnings_by_category.pig
+```
 
 ---
 
@@ -408,7 +240,7 @@ Major Category → Average 4-Year Earnings
 
 ### Objective
 
-Calculate the total employment for each major category.
+Calculate total employment for each major category.
 
 ### Output
 
@@ -418,7 +250,9 @@ Major Category → Total Employment
 
 ### Script
 
-`Pig/PIG3/pig3_total_employment_by_category.pig`
+```text
+Pig/PIG3/pig3_total_employment_by_category.pig
+```
 
 ---
 
@@ -426,7 +260,7 @@ Major Category → Total Employment
 
 ### Objective
 
-Identify the top 10 major categories with the highest total employment.
+Identify the top 10 major categories based on total employment.
 
 ### Operations Used
 
@@ -438,20 +272,24 @@ Identify the top 10 major categories with the highest total employment.
 
 ### Top 10 Categories
 
-1. Health Professions and Related Programs
-2. Business, Management, Marketing, and Related Support Services
-3. Liberal Arts and Sciences, General Studies and Humanities
-4. Culinary, Entertainment, and Personal Services
-5. Education
-6. Psychology
-7. Mechanic and Repair Technologies/Technicians
-8. Homeland Security, Law Enforcement, Firefighting and Related Protective Services
-9. Computer and Information Sciences and Support Services
-10. Social Sciences
+| Rank | Major Category                                                                   |
+| ---: | -------------------------------------------------------------------------------- |
+|    1 | Health Professions and Related Programs                                          |
+|    2 | Business, Management, Marketing, and Related Support Services                    |
+|    3 | Liberal Arts and Sciences, General Studies and Humanities                        |
+|    4 | Culinary, Entertainment, and Personal Services                                   |
+|    5 | Education                                                                        |
+|    6 | Psychology                                                                       |
+|    7 | Mechanic and Repair Technologies/Technicians                                     |
+|    8 | Homeland Security, Law Enforcement, Firefighting and Related Protective Services |
+|    9 | Computer and Information Sciences and Support Services                           |
+|   10 | Social Sciences                                                                  |
 
 ### Script
 
-`Pig/PIG4/pig4_top10_employment.pig`
+```text
+Pig/PIG4/pig4_top10_employment.pig
+```
 
 ---
 
@@ -459,7 +297,7 @@ Identify the top 10 major categories with the highest total employment.
 
 ### Objective
 
-Identify college programs that satisfy both conditions:
+Identify college programs that meet both financial conditions:
 
 ```text
 Median 4-Year Earnings > $70,000
@@ -473,7 +311,26 @@ Median Student Debt < $30,000
 
 ### Script
 
-`Pig/PIG5/pig5_high_earning_low_debt.pig`
+```text
+Pig/PIG5/pig5_high_earning_low_debt.pig
+```
+
+---
+
+# 📈 Key Results
+
+The implemented operations produced the following analytical outputs:
+
+| Technology  | Operation                    | Result                             |
+| ----------- | ---------------------------- | ---------------------------------- |
+| HDFS        | Dataset Storage              | 126.34 MB dataset stored in HDFS   |
+| MapReduce 1 | Average Earnings by Major    | 358 major groups                   |
+| MapReduce 2 | Employment by Category       | 44 major categories                |
+| MapReduce 3 | Average Debt by Category     | Category-level debt analysis       |
+| Pig 2       | Average Earnings by Category | 44 categories                      |
+| Pig 3       | Total Employment by Category | Category-level employment analysis |
+| Pig 4       | Top Employment Categories    | Top 10 categories                  |
+| Pig 5       | Earnings + Debt Filter       | Programs meeting selected criteria |
 
 ---
 
@@ -535,50 +392,55 @@ BDAL_Final_Project/
 
 # 🛠️ Technologies Used
 
-| Technology       | Purpose                          |
-| :--------------- | :------------------------------- |
-| Hadoop HDFS      | Distributed data storage         |
-| Hadoop MapReduce | Distributed data processing      |
-| Apache Pig       | Data transformation and analysis |
-| Java             | MapReduce programming            |
-| Pig Latin        | Pig data processing              |
-| Git              | Version control                  |
-| GitHub           | Project repository               |
-| Git LFS          | Large dataset storage            |
+| Technology           | Purpose                          |
+| -------------------- | -------------------------------- |
+| **Hadoop HDFS**      | Distributed data storage         |
+| **Hadoop MapReduce** | Distributed data processing      |
+| **Apache Pig**       | Data transformation and analysis |
+| **Java**             | MapReduce programming            |
+| **Pig Latin**        | Pig data processing              |
+| **Git**              | Version control                  |
+| **GitHub**           | Project repository               |
+| **Git LFS**          | Large dataset storage            |
 
 ---
 
 # 🎯 Project Objectives
 
-The major objectives of this project are:
+The main objectives of this project are:
 
 1. Store a large dataset using Hadoop HDFS.
-2. Understand distributed file storage and HDFS blocks.
+2. Understand distributed storage and HDFS blocks.
 3. Process large-scale data using MapReduce.
-4. Perform statistical analysis on college major data.
-5. Use Apache Pig for grouping, aggregation, sorting, filtering, and limiting.
-6. Analyze college major earnings, employment, and student debt.
+4. Perform earnings, employment, and debt analysis.
+5. Use Apache Pig for data transformation and analysis.
+6. Apply grouping, aggregation, filtering, sorting, and ranking.
 7. Identify high-earning and relatively low-debt programs.
-8. Demonstrate practical applications of Big Data technologies.
+8. Demonstrate an end-to-end Big Data Analytics workflow.
 
 ---
 
-# 📈 Key Analytical Areas
+# 📚 Learning Outcomes
 
-The project focuses on the following analytical questions:
+This project provides practical experience with:
 
-* Which college majors have higher average earnings?
-* Which major categories have the highest employment?
-* What is the average student debt across major categories?
-* Which categories have the highest total employment?
-* Which programs combine high earnings with relatively low student debt?
-* How can Hadoop technologies be used to process a large-scale dataset?
+* Distributed file storage
+* HDFS file and directory management
+* HDFS block analysis
+* MapReduce Mapper and Reducer
+* Key-value based processing
+* Data grouping and aggregation
+* Average and sum calculations
+* Filtering and sorting
+* Ranking and limiting results
+* Large CSV data processing
+* Hadoop-based analytical workflows
 
 ---
 
 # 📸 Screenshots
 
-The repository contains screenshots documenting the execution and results of:
+The repository contains screenshots documenting the implementation and execution of:
 
 * HDFS dataset upload
 * HDFS file analysis
@@ -588,26 +450,7 @@ The repository contains screenshots documenting the execution and results of:
 * Apache Pig operations
 * Pig processing results
 
-These screenshots provide evidence of the practical implementation and successful execution of the Big Data operations.
-
----
-
-# 📚 Learning Outcomes
-
-This project demonstrates practical understanding of:
-
-* Distributed file storage
-* HDFS directory and file management
-* HDFS block analysis
-* MapReduce Mapper and Reducer
-* Key-value based processing
-* Data grouping and aggregation
-* Average and sum calculations
-* Sorting and ranking
-* Data filtering
-* Result limitation
-* Large CSV data processing
-* Hadoop-based analytical workflows
+These screenshots provide evidence of the practical implementation of the project.
 
 ---
 
@@ -623,9 +466,9 @@ This project demonstrates practical understanding of:
 
 # ⭐ Conclusion
 
-This project demonstrates an end-to-end Big Data Analytics workflow, beginning with distributed storage using **Hadoop HDFS**, followed by data processing and analysis using **Hadoop MapReduce** and **Apache Pig**.
+This project demonstrates an end-to-end Big Data Analytics workflow, starting with distributed storage using **Hadoop HDFS**, followed by data processing using **Hadoop MapReduce** and **Apache Pig**.
 
-The project provides practical experience in handling large-scale data and generates meaningful insights into **college majors, earnings, employment, and student debt**.
+The implemented analyses provide insights into **college major earnings, employment, student debt, and career outcomes**, while demonstrating the practical use of Hadoop-based Big Data technologies for processing large-scale datasets.
 
 ````
 
