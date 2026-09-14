@@ -16,26 +16,47 @@ The project implements three major Big Data technologies:
 
 ## 📊 Dataset
 
-**Dataset:** `college_major_career_outcomes_2026.csv`
+### Dataset Overview
 
-The dataset contains approximately **126 MB** of data and includes **72 attributes** related to college programs and career outcomes.
+The project uses the **College Major & Career Outcomes 2026** dataset, a large-scale CSV dataset containing information about college programs, institutions, earnings, employment, student debt, occupations, and AI-related workforce indicators.
 
-### Main Data Categories
+The dataset is suitable for Big Data processing because of its large size, diverse attributes, and combination of categorical, numerical, and textual data.
 
-- Institution information
-- College major and CIP classification
-- Credential and degree information
-- Tuition and admission information
-- 1-year, 4-year, and 5-year earnings
-- Employment statistics
-- Student debt
-- Debt-to-earnings indicators
-- Occupation information
-- BLS occupation statistics
-- O*NET information
-- AI-related occupation indicators
+### Dataset Statistics
+
+| Property | Value |
+|---|---:|
+| Dataset Name | College Major & Career Outcomes 2026 |
+| File Name | `college_major_career_outcomes_2026.csv` |
+| File Format | CSV |
+| Number of Records | **227,981** |
+| Number of Attributes | **72** |
+| Raw File Size | **126,340,696 bytes** |
+| Approximate Size | **126.34 MB** |
+| Distinct Major Titles Processed | **358** |
+| Major Categories Processed | **44** |
+| Storage Platform | Hadoop HDFS |
+| Processing Platforms | Hadoop MapReduce & Apache Pig |
+
+> **Note:** The record count represents the input records processed by the Hadoop MapReduce jobs. The distinct major-title and major-category counts correspond to the successfully processed analytical outputs.
 
 ---
+
+### Dataset Dimensions
+
+The dataset contains:
+
+- **227,981 records**
+- **72 attributes**
+- Approximately **126.34 MB** of raw CSV data
+
+This size makes the dataset appropriate for demonstrating distributed storage and processing using Hadoop technologies.
+
+The dataset was uploaded to HDFS at:
+
+```text
+/BDAFinal1066/college/college_major_career_outcomes_2026.csv
+
 
 ## 🏗️ Project Architecture
 
